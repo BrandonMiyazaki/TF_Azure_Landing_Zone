@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./caf-mgmt-groups
+        working-directory: ./landingzones/caf-mgmt-groups
 
     steps:
       - name: Checkout
