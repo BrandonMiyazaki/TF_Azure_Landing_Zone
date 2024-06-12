@@ -33,12 +33,15 @@ jobs:
 
       - name: Terraform init
         id: init
-        run: |
-          set -a
-          source .env.backend
-          terraform init \
-            -backend-config="resource_group_name=$TF_VAR_state_resource_group_name" \
-            -backend-config="storage_account_name=$TF_VAR_state_storage_account_name"
+        env:
+            ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+            ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+            ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+            ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+            RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
+            STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }}
+            CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
+        run: terraform init -backend-config="storage_account_name=$STORAGE_ACCOUNT" -backend-config="container_name=$CONTAINER_NAME" -backend-config="resource_group_name=$RESOURCE_GROUP"
 
       - name: Terraform validate
         id: validate
