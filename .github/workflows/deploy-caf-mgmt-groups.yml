@@ -1,5 +1,4 @@
-name: On Release Main
-  
+name: Deploy CAF management groups
 on:
   workflow_dispatch:
 
