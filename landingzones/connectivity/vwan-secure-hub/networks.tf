@@ -49,18 +49,7 @@ resource "azurerm_network_security_group" "region1-nsg" {
   name                = "${var.region1}-nsg-01"
   location            = var.region1
   resource_group_name = azurerm_resource_group.region1-rg1.name
-
-  security_rule {
-    name                       = "RDP-In"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "*"
-    source_port_range          = "*"
-    destination_port_range     = "3389"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
+  
   tags = {
     Environment = var.environment_tag
   }
@@ -70,17 +59,6 @@ resource "azurerm_network_security_group" "region2-nsg" {
   location            = var.region2
   resource_group_name = azurerm_resource_group.region2-rg1.name
 
-  security_rule {
-    name                       = "RDP-In"
-    priority                   = 100
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "*"
-    source_port_range          = "*"
-    destination_port_range     = "3389"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-  }
   tags = {
     Environment = var.environment_tag
   }
