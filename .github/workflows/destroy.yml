@@ -1,4 +1,4 @@
-name: Deploy CAF management groups
+name: Destroy Connectivity Secure VWAN
 on:
   workflow_dispatch:
 
@@ -16,8 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./your tf directory
-
+        working-directory: ./landingzones/connectivity/vwan-secure-hub
     steps:
       - name: Checkout
         uses: actions/checkout@v2
