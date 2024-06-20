@@ -1,4 +1,4 @@
-name: Destroy Connectivity Secure VWAN
+name: Destroy Environment
 on:
   workflow_dispatch:
 
@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./landingzones/connectivity/vwan-secure-hub
+        working-directory: ./working directory
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
       - name: Terraform init
         id: init
         run: terraform init 
-        
+
       - name: Terraform Destroy
         id: destroy
         run: terraform destroy -auto-approve
