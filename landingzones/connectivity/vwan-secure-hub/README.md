@@ -7,7 +7,7 @@ Without Azure Firewall:
 Virtual WAN Hub Environment
 
 With Azure Firewall:
-Virtual WAN Hub Environment - with Azure Firewall
+Virtual WAN Hub Environment - with Azure Firewall (secure hub)
 
 What does this deploy?
 This code deploys the following Resources:
@@ -30,3 +30,5 @@ Lines
 
  # Optional - Firewalls 
 default     = true
+
+REMINDER: This will deploy billable resources in your tenant so please be mindful to destroy any resources that are no longer needed.
