@@ -1,5 +1,5 @@
 This repo will help you deploy an Azure Virtual WAN Landing Zone Environment
-Overview
+
 This is a Terraform based landingzone with Azure Virtual WAN. This deployment has two options - with or without Azure Firewall, and is based on a two-region design.
 
 What does this code deploy?
